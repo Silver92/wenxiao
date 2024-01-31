@@ -1,6 +1,6 @@
 <!-- The Top Bar -->
 
-<header id="topbar-wrapper" aria-label="Top Bar">
+<header id="topbar-wrapper" aria-label="Top Bar" class="col-12">
   <div
     id="topbar"
     class="d-flex align-items-center justify-content-between px-lg-3 h-100"
@@ -55,7 +55,7 @@
       {% endif %}
     </div>
 
-    <button type="button" id="search-trigger" class="btn btn-link">
+    {% comment %} <button type="button" id="search-trigger" class="btn btn-link">
       <i class="fas fa-search fa-fw"></i>
     </button>
 
@@ -72,6 +72,6 @@
     </search>
     <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
       {{- site.data.locales[include.lang].search.cancel -}}
-    </button>
+    </button> {% endcomment %}
   </div>
 </header>
