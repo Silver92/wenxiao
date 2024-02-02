@@ -144,6 +144,10 @@ footer {
     }
   }
 
+  em {
+    @extend %text-highlight;
+  }
+
   p {
     text-align: center;
     margin-bottom: 0;
@@ -1088,7 +1092,7 @@ search {
   font-family: sans-serif;
   color: var(--topbar-text-color);
   text-align: center;
-  width: 70%;
+  width: 85%;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: keep-all;
@@ -1490,8 +1494,7 @@ search {
 
   #main-wrapper > .container {
     max-width: $main-content-max-width;
-    padding-left: 1.75rem !important;
-    padding-right: 1.75rem !important;
+    margin-left: 10% !important;
   }
 
   main.col-12,

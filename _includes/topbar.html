@@ -3,7 +3,7 @@
 <header id="topbar-wrapper" aria-label="Top Bar">
   <div
     id="topbar"
-    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
+    class="d-flex align-items-center px-lg-3 h-100"
   >
     <nav id="breadcrumb" aria-label="Breadcrumb">
       {% assign paths = page.url | split: '/' %}
@@ -17,7 +17,7 @@
           {% if forloop.first %}
             <span>
               <a href="{{ '/' | relative_url }}">
-                {{ site.data.locales[include.lang].tabs.home | capitalize }}
+                {{- site.data.locales[include.lang].tabs.home | capitalize -}}
               </a>
             </span>
 
@@ -30,8 +30,8 @@
 
           {% elsif page.layout == 'category' or page.layout == 'tag' %}
             <span>
-              <a href="{{ item | relative_url }}">
-                {{ site.data.locales[include.lang].tabs[item] | default: page.title }}
+              <a href="{{ item | append: '/' | relative_url }}">
+                {{- site.data.locales[include.lang].tabs[item] | default: page.title -}}
               </a>
             </span>
           {% endif %}
@@ -55,23 +55,25 @@
       {% endif %}
     </div>
 
-    <button type="button" id="search-trigger" class="btn btn-link">
-      <i class="fas fa-search fa-fw"></i>
-    </button>
+    {% comment %}
+      <button type="button" id="search-trigger" class="btn btn-link">
+        <i class="fas fa-search fa-fw"></i>
+      </button>
 
-    <search class="align-items-center ms-3 ms-lg-0">
-      <i class="fas fa-search fa-fw"></i>
-      <input
-        class="form-control"
-        id="search-input"
-        type="search"
-        aria-label="search"
-        autocomplete="off"
-        placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
-      >
-    </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
-      {{- site.data.locales[include.lang].search.cancel -}}
-    </button>
+      <search class="align-items-center ms-3 ms-lg-0">
+        <i class="fas fa-search fa-fw"></i>
+        <input
+          class="form-control"
+          id="search-input"
+          type="search"
+          aria-label="search"
+          autocomplete="off"
+          placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
+        >
+      </search>
+      <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
+        {{- site.data.locales[include.lang].search.cancel -}}
+      </button>
+    {% endcomment %}
   </div>
 </header>
