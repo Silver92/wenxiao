@@ -1,5 +1,5 @@
 ---
-# the default layout is 'page'
+layout: projects
 icon: fas fa-folder
 order: 5
 ---

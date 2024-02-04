@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+{% assign tab_key = page.title | downcase %}
+{% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
+<h1 class="dynamic-title">
+    {{ title }}
+</h1>
+
+{% include lang.html %}
+
+{% assign pinned = site.projects | where: 'pin', 'true' %}
+{% assign default = site.projects | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+
+{% assign projects = '' | split: '' %}
+
+<!-- Get pinned projects -->
+
+{% assign pinned_num = pinned.size %}
+
+{% if pinned_num > 0 %}
+  {% for i in (0..pinned.size) limit: pinned_num %}
+    {% assign projects = projects | push: pinned[i] %}
+  {% endfor %}
+{% else %}
+  {% assign pinned_num = 0 %}
+{% endif %}
+
+<!-- Get default projects -->
+{% assign default_num = default.size %}
+
+{% if default_num > 0 %}
+  {% for i in (0..default.size) limit: default_num%}
+    {% assign projects = projects | push: default[i] %}
+  {% endfor %}
+{% endif %}
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
+  {% for post in projects %}
+    <article class="card-wrapper card">
+      <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+        {% assign card_body_col = '12' %}
+
+        {% if post.image %}
+          {% assign src = post.image.path | default: post.image %}
+          {% unless src contains '//' %}
+            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
+          {% endunless %}
+
+          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+
+          {% assign lqip = null %}
+
+          {% if post.image.lqip %}
+            {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
+          {% endif %}
+
+          <div class="col-md-5">
+            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+          </div>
+
+          {% assign card_body_col = '7' %}
+        {% endif %}
+
+        <div class="col-md-{{ card_body_col }}">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                {% include no-linenos.html content=post.content %}
+                {{ content | markdownify | strip_html | truncate: 300 | escape }}
+              </p>
+            </div>
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+</div>
+<!-- #post-list -->
