@@ -161,6 +161,10 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
+      path: "_projects"
+    values:
+      layout: post
+  - scope:
       path: assets/img/favicons
     values:
       swcache: true
