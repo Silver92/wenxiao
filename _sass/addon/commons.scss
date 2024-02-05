@@ -908,7 +908,7 @@ $btn-mb: 0.5rem;
   #breadcrumb {
     font-size: 1rem;
     color: var(--text-muted-color);
-    padding-left: 0.5rem;
+    // padding-left: 0.5rem;
 
     a:hover {
       @extend %link-hover;
