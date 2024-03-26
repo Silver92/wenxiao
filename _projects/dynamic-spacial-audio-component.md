@@ -1,5 +1,5 @@
 ---
-title: Dynamic Space Detection Component
+title: Dynamic Spacial Audio Component
 author: wen
 categories: [Blogging, Demo]
 tags: [Spacial Audio, Unreal, Wwise]

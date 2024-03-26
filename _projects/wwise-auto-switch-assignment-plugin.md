@@ -1,8 +1,8 @@
-﻿---
+---
 title: Wwise Auto Switch Assignment Plugin
 author: wen
 categories: [Blogging, Demo]
-tags: [Spacial Audio, Unreal, Wwise]
+tags: [Wwise]
 pin: true
 math: true
 mermaid: true
