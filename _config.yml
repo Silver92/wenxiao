@@ -163,7 +163,7 @@ defaults:
   - scope:
       path: "_projects"
     values:
-      layout: post
+      layout: project
   - scope:
       path: assets/img/favicons
     values:

@@ -12,7 +12,6 @@ image:
   alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
-# Wwise Auto Switch Assignment Plugin
 <https://youtu.be/mUuQFkw_r5c>
 
 This tool is developed to allow audio designers to quickly assign switch units to their parent switch 
