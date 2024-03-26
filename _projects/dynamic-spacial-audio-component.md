@@ -1,6 +1,6 @@
 ---
 title: Dynamic Spacial Audio Component
-author: wen
+author: Wen
 categories: [Blogging, Demo]
 tags: [Spacial Audio, Unreal, Wwise]
 pin: true
@@ -12,7 +12,6 @@ image:
   alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
-# Dynamic Spacial Audio Component
 <https://youtu.be/UcmTNhhbLqU>
 
 This component is a new solution to implement the spatial audio effect in a dynamic space. 
