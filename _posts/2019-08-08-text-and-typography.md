@@ -1,5 +1,6 @@
 ---
 title: Text and Typography
+description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 author: cotes
 date: 2019-08-08 11:33:00 +0800
 categories: [Blogging, Demo]
@@ -13,25 +14,22 @@ image:
   alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
-This post is to show Markdown syntax rendering on [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork), you can also use it as an example of writing. Now, let's start looking at text and typography.
-
 ## Headings
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 # H1 - heading
-
 {: .mt-4 .mb-0 }
 
 ## H2 - heading
-
 {: data-toc-skip='' .mt-4 .mb-0 }
 
 ### H3 - heading
-
 {: data-toc-skip='' .mt-4 .mb-0 }
 
 #### H4 - heading
-
 {: data-toc-skip='' .mt-4 }
+<!-- markdownlint-restore -->
 
 ## Paragraph
 
@@ -72,17 +70,20 @@ Moon
 
 ## Prompts
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 > An example showing the `tip` type prompt.
-> {: .prompt-tip }
+{: .prompt-tip }
 
 > An example showing the `info` type prompt.
-> {: .prompt-info }
+{: .prompt-info }
 
 > An example showing the `warning` type prompt.
-> {: .prompt-warning }
+{: .prompt-warning }
 
 > An example showing the `danger` type prompt.
-> {: .prompt-danger }
+{: .prompt-danger }
+<!-- markdownlint-restore -->
 
 ## Tables
 
@@ -112,7 +113,7 @@ Here is the `/path/to/the/file.extend`{: .filepath}.
 
 ### Common
 
-```
+```text
 This is a common code snippet, without syntax highlight and line number.
 ```
 
@@ -132,8 +133,7 @@ fi;
   "colors/light-typography",
   "colors/dark-typography";
 ```
-
-{: file='\_sass/jekyll-theme-chirpy.scss'}
+{: file='_sass/jekyll-theme-chirpy.scss'}
 
 ## Mathematics
 
