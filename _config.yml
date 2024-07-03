@@ -25,7 +25,7 @@ description: >- # used by seo meta and the atom feed A minimal, responsive and f
 url: ""
 
 github:
-  username: github_username # change to your github username
+  username: Silver92 # change to your github username
 
 twitter:
   username: twitter_username # change to your twitter username
@@ -38,7 +38,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     # - https://twitter.com/username # change to your twitter homepage
-    # - https://github.com/Silver92 # change to your github homepage
+    https://github.com/Silver92 # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/wen-x-929aa7a9/
@@ -197,6 +197,7 @@ defaults:
       path: "_projects"
     values:
       layout: project
+      permalink: /project/:title/
   - scope:
       path: assets/img/favicons
     values:

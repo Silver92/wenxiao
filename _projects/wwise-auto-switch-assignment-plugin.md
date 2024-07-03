@@ -1,20 +1,16 @@
 ---
 title: Wwise Auto Switch Assignment Plugin
 author: wen
-categories: [Blogging, Demo]
+categories: [Project]
 tags: [Wwise]
 pin: true
 math: true
 mermaid: true
-image:
-  path: /commons/devices-mockup.png
-  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
-  alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
-<https://youtu.be/mUuQFkw_r5c>
+{% include embed/youtube.html id='mUuQFkw_r5c' %}
 
-This tool is developed to allow audio designers to quickly assign switch units to their parent switch 
+The gadget is developed to allow audio designers to quickly assign switch units to their parent switch 
 containers according to a defined rule. The plugin is developed with the JUCE framework and WAAPI, 
 and users can install it directly into the Wwise editor.
 
