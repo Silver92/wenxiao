@@ -1,11 +1,10 @@
 ---
 title: Dynamic Spacial Audio Component
 author: wen
+description: A new solution to implement the spatial audio effect in a dynamic space. Parameters provided by the system will control the spacial sound features real-time in the game, expanding the possibilities to create a more immersive soundscape. 
 categories: [Project]
 tags: [Spacial Audio, Unreal, Wwise]
 pin: true
-math: true
-mermaid: true
 ---
 {% include embed/youtube.html id='UcmTNhhbLqU' %}
 

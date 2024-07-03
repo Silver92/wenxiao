@@ -1,6 +1,7 @@
 ---
 title: Wwise Auto Switch Assignment Plugin
 author: wen
+description: An audio implemetation tool used in Wwise to help the sound designers make the switch container assignment fast and safe.
 categories: [Project]
 tags: [Wwise]
 pin: true
