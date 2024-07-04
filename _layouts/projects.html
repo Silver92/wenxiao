@@ -5,11 +5,18 @@ refactor: true
 
 {% include lang.html %}
 
+{% assign tab_key = page.title | downcase %}
+{% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
+<h1 class="dynamic-title">
+  {{ title }}
+</h1>
+
 {% assign pinned = site.projects | where: 'pin', 'true' %}
+{% assign default = site.projects | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
 
 {% assign projects = '' | split: '' %}
 
-<!-- Get pinned posts -->
+<!-- Get pinned projects -->
 {% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
 {% assign pinned_num = pinned.size | minus: offset %}
 
@@ -21,6 +28,15 @@ refactor: true
   {% assign pinned_num = 0 %}
 {% endif %}
 
+<!-- Get default projects -->
+{% assign default_num = default.size %}
+
+{% if default_num > 0 %}
+  {% for i in (0..default.size) limit: default_num%}
+    {% assign projects = projects | push: default[i] %}
+  {% endfor %}
+{% endif %}
+
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in projects %}
   <article class="card-wrapper card">
@@ -30,7 +46,7 @@ refactor: true
       {% if post.image %}
       {% assign src = post.image.path | default: post.image %}
       {% unless src contains '//' %}
-      {% assign src = post.media_subpath | append: '/' | append: src | replace: '//', '/' %}
+      {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
       {% endunless %}
 
       {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
@@ -41,48 +57,21 @@ refactor: true
       {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
       {% endif %}
 
-      <div class="col-md-5">
+      <div class="col-md-4">
         <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
       </div>
 
-      {% assign card_body_col = '7' %}
+      {% assign card_body_col = '8' %}
       {% endif %}
 
       <div class="col-md-{{ card_body_col }}">
         <div class="card-body d-flex flex-column">
           <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
           <div class="card-text content mt-0 mb-3">
-            <p>{% include post-description.html %}</p>
+            <p>
+              {% include post-description.html %}
+            </p>
           </div>
-
-          {% comment %}
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              {% include datetime.html date=post.date lang=lang %}
-
-              <!-- categories -->
-              {% if post.categories.size > 0 %}
-              <i class="far fa-folder-open fa-fw me-1"></i>
-              <span class="categories">
-                {% for category in post.categories %}
-                {{ category }}
-                {%- unless forloop.last -%},{%- endunless -%}
-                {% endfor %}
-              </span>
-              {% endif %}
-            </div>
-
-            {% if post.pin %}
-            <div class="pin ms-1">
-              <i class="fas fa-thumbtack fa-fw"></i>
-              <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
-            </div>
-            {% endif %}
-          </div>
-          {% endcomment %}
-          <!-- .post-meta -->
         </div>
         <!-- .card-body -->
       </div>
