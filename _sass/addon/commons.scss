@@ -704,12 +704,11 @@ $btn-mb: 0.5rem;
 
   #avatar {
     display: block;
-    width: 9rem;
-    height: 9rem;
+    width: 7rem;
+    height: 7rem;
     overflow: hidden;
     box-shadow: var(--avatar-border-color) 0 0 0 2px;
     transform: translateZ(0); /* fixed the zoom in Safari */
-    margin-left: 2.5rem;
 
     img {
       transition: transform 0.5s;
@@ -724,20 +723,19 @@ $btn-mb: 0.5rem;
     @include mt-mb(2.5rem);
     @extend %clickable-transition;
 
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2.5rem;
+    padding-right: 1.25rem;
     width: 100%;
   }
 
   .site-title {
     font-family: inherit;
     font-weight: 900;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     line-height: 1.2;
     letter-spacing: 0.25px;
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
-    margin-left: 2.5rem;
 
     a {
       @extend %clickable-transition;
@@ -764,7 +762,7 @@ $btn-mb: 0.5rem;
     li.nav-item {
       opacity: 0.9;
       width: 100%;
-      padding-left: 1rem;
+      padding-left: 1.5rem;
       padding-right: 1rem;
 
       a.nav-link {
@@ -783,7 +781,6 @@ $btn-mb: 0.5rem;
           font-size: 95%;
           opacity: 0.8;
           margin-right: 1.5rem;
-          margin-left: 2rem;
         }
 
         span {
@@ -810,7 +807,7 @@ $btn-mb: 0.5rem;
   }
 
   .sidebar-bottom {
-    padding-left: 3.5rem;
+    padding-left: 2rem;
     padding-right: 1rem;
     margin-bottom: 1.5rem;
 
@@ -1520,7 +1517,7 @@ search {
     }
 
     .sidebar-bottom {
-      padding-left: 5rem;
+      padding-left: 2.75rem;
       margin-bottom: 1.75rem;
 
       a:not(:last-child) {
