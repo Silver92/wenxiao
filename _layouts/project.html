@@ -4,7 +4,6 @@ refactor: true
 tail_includes:
   - post-nav
 ---
-
 {% include lang.html %}
 
 <article class="px-1">
@@ -13,18 +12,22 @@ tail_includes:
 
     <div class="post-meta text-muted">
       <!-- published date -->
-      {%- comment -%} <span>
-        {{ site.data.locales[lang].post.posted }}
-        {% include datetime.html date=page.date tooltip=true lang=lang %}
-      </span> {%- endcomment -%}
+      {%- comment -%}
+        <span>
+          {{ site.data.locales[lang].post.posted }}
+          {% include datetime.html date=page.date tooltip=true lang=lang %}
+        </span>
+      {%- endcomment -%}
 
       <!-- lastmod date -->
-      {%- comment -%} {% if page.last_modified_at and page.last_modified_at != page.date %}
-        <span>
-          {{ site.data.locales[lang].post.updated }}
-          {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
-        </span>
-      {% endif %} {%- endcomment -%}
+      {%- comment -%}
+        {% if page.last_modified_at and page.last_modified_at != page.date %}
+          <span>
+            {{ site.data.locales[lang].post.updated }}
+            {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+          </span>
+        {% endif %}
+      {%- endcomment -%}
 
       {% if page.image %}
         {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
@@ -84,30 +87,34 @@ tail_includes:
 
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
-    {% if page.categories.size > 0 %}
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        {% for category in page.categories %}
-          <a href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/">{{ category }}</a>
-          {%- unless forloop.last -%},{%- endunless -%}
-        {% endfor %}
-      </div>
-    {% endif %}
+    {% comment %}
+      {% if page.categories.size > 0 %}
+        <div class="post-meta mb-3">
+          <i class="far fa-folder-open fa-fw me-1"></i>
+          {% for category in page.categories %}
+            <a href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/">{{ category }}</a>
+            {%- unless forloop.last -%},{%- endunless -%}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endcomment %}
 
     <!-- tags -->
-    {% if page.tags.size > 0 %}
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        {% for tag in page.tags %}
-          <a
-            href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
-            class="post-tag no-text-decoration"
-          >
-            {{- tag -}}
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
+    {% comment %}
+      {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw me-1"></i>
+          {% for tag in page.tags %}
+            <a
+              href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+              class="post-tag no-text-decoration"
+            >
+              {{- tag -}}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endcomment %}
 
     <div
       class="
