@@ -368,8 +368,7 @@ main {
   line-height: 1.75;
 
   h1 {
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
   }
 
   p {
@@ -763,7 +762,7 @@ $btn-mb: 0.5rem;
       opacity: 0.9;
       width: 100%;
       padding-left: 1.5rem;
-      padding-right: 1rem;
+      padding-right: 1.5rem;
 
       a.nav-link {
         @include pt-pb(0.6rem);
@@ -784,8 +783,8 @@ $btn-mb: 0.5rem;
         }
 
         span {
-          font-size: 100%;
-          letter-spacing: 0.3px;
+          font-size: 90%;
+          letter-spacing: 0.2px;
         }
       }
 
@@ -908,7 +907,7 @@ $btn-mb: 0.5rem;
   #breadcrumb {
     font-size: 1rem;
     color: var(--text-muted-color);
-    // padding-left: 0.5rem;
+    padding-left: 0.5rem;
 
     a:hover {
       @extend %link-hover;
@@ -1080,7 +1079,7 @@ search {
   font-family: sans-serif;
   color: var(--topbar-text-color);
   text-align: center;
-  width: 85%;
+  width: 70%;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: keep-all;
@@ -1339,7 +1338,7 @@ search {
     display: none;
 
     ~ .content {
-      margin-top: 1rem;
+      margin-top: 2.5rem;
     }
   }
 } /* max-width: 849px */
@@ -1376,7 +1375,7 @@ search {
 
   main {
     h1 {
-      margin-top: 1rem;
+      margin-top: 3rem;
     }
   }
 
@@ -1487,7 +1486,8 @@ search {
 
   #main-wrapper > .container {
     max-width: $main-content-max-width;
-    margin-left: 10% !important;
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
   }
 
   main.col-12,
