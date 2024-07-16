@@ -34,3 +34,5 @@ As the plugin is switched to the beat mode, the knob of the time becomes descret
 {% include embed/youtube.html id='AIrypINn6Zs' %}
 
 A practical feature deserved to mention is the Time/Beat Switch feature. The Time/Beat mode button provides the designer an easy way to test the delay time they want and quickly align the time to the beat by a simple click. The button saves the time to calculate the beat when the delay sound needs to follow some rhythm patterns. The users can also create some special rhythm patterns with the delay plugin, which creates some special sound effects patterns especially in some rhythm samples such as the drum beats.
+
+Github: [https://github.com/Silver92/Delay-Audio-Plugin-Demo.git](https://github.com/Silver92/Delay-Audio-Plugin-Demo.git)
